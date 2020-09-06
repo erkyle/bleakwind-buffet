@@ -7,7 +7,7 @@ using System.Text;
  * Class name: DoubleDraugr.cs
  * Purpose: To represent the double draugr menu option
  */
-namespace Data.Entrees
+namespace BleakwindBuffet.Data.Entrees
 {
     public class DoubleDraugr
     {

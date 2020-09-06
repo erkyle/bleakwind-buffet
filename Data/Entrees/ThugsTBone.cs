@@ -7,7 +7,7 @@ using System.Text;
  * Class name: ThugsTBone.cs
  * Purpose: To represent the thugs t-bone menu option
  */
-namespace Data.Entrees
+namespace BleakwindBuffet.Data.Entrees
 {
     public class ThugsTBone
     {

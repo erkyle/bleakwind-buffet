@@ -7,7 +7,7 @@ using System.Text;
  * Class name: PhillyPoacher.cs
  * Purpose: To represent the philly poacher menu option
  */
-namespace Data.Entrees
+namespace BleakwindBuffet.Data.Entrees
 {
     public class PhillyPoacher
     {

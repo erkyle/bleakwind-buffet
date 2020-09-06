@@ -1,5 +1,4 @@
 ﻿using BleakwindBuffet.Data.Enums;
-using Data.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,7 +8,7 @@ using System.Text;
  * Class name: AretinoAppleJuice.cs
  * Purpose: To represent the aretino apple juice menu option
  */
-namespace Data.Drinks
+namespace BleakwindBuffet.Data.Drinks
 {
     public class AretinoAppleJuice
     {

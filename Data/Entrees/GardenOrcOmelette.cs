@@ -7,7 +7,7 @@ using System.Text;
  * Class name: GardenOrcOmelette.cs
  * Purpose: To represent the garden orc omelette menu option
  */
-namespace Data.Entrees
+namespace BleakwindBuffet.Data.Entrees
 {
     public class GardenOrcOmelette
     {

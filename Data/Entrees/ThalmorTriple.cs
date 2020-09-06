@@ -7,7 +7,7 @@ using System.Text;
  * Class name: ThalmorTriple.cs
  * Purpose: To represent the thalmor triple menu option
  */
-namespace Data.Entrees
+namespace BleakwindBuffet.Data.Entrees
 {
     public class ThalmorTriple
     {

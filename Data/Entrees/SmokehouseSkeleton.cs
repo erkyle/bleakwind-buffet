@@ -7,7 +7,7 @@ using System.Text;
  * Class name: SmokehouseSkeleton.cs
  * Purpose: To represent the smokehouse skeleton menu option
  */
-namespace Data.Entrees
+namespace BleakwindBuffet.Data.Entrees
 {
     public class SmokehouseSkeleton
     {
