@@ -10,12 +10,12 @@ using System.Text;
  */
 namespace BleakwindBuffet.Data.Sides
 {
-    public class VokunSalad
+    public class VokunSalad : Side, IOrderItem
     {
         /// <summary>
         /// Gets the price of the side
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -31,7 +31,7 @@ namespace BleakwindBuffet.Data.Sides
         /// <summary>
         /// Gets the calories of the side
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -45,14 +45,9 @@ namespace BleakwindBuffet.Data.Sides
         }
 
         /// <summary>
-        /// Gets and sets the size of the side
-        /// </summary>
-        public Size Size { get; set; } = Size.Small;
-
-        /// <summary>
         /// Gets the list of special instructions
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

@@ -10,12 +10,12 @@ using System.Text;
  */
 namespace BleakwindBuffet.Data.Drinks
 {
-    public class AretinoAppleJuice
+    public class AretinoAppleJuice : Drink, IOrderItem
     {
         /// <summary>
         /// Gets the price of the drink
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -31,7 +31,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Gets the calories of the drink
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -45,11 +45,6 @@ namespace BleakwindBuffet.Data.Drinks
         }
 
         /// <summary>
-        /// Gets and sets the size of the drink
-        /// </summary>
-        public Size Size { get; set; } = Size.Small;
-
-        /// <summary>
         /// Gets and sets if the drink has ice
         /// </summary>
         public bool Ice { get; set; } = false;
@@ -57,7 +52,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Gets the list of special instructions
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
