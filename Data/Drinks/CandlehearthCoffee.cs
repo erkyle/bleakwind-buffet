@@ -1,6 +1,7 @@
 ﻿using BleakwindBuffet.Data.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 /*
@@ -10,8 +11,13 @@ using System.Text;
  */
 namespace BleakwindBuffet.Data.Drinks
 {
-    public class CandlehearthCoffee : Drink, IOrderItem
+    public class CandlehearthCoffee : Drink, IOrderItem, INotifyPropertyChanged
     {
+        /// <summary>
+        /// An event fired when a property of this object changes
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// Gets the price of the drink
         /// </summary>
@@ -44,20 +50,56 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
+        private bool ice = false;
         /// <summary>
         /// Gets and sets if the drink has ice
         /// </summary>
-        public bool Ice { get; set; } = false;
+        public bool Ice
+        {
+            get { return ice; }
+            set
+            {
+                if (ice != value)
+                {
+                    ice = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                }
+            }
+        }
 
+        private bool roomForCream = false;
         /// <summary>
         /// Gets and sets if the drink has cream
         /// </summary>
-        public bool RoomForCream { get; set; } = false;
+        public bool RoomForCream
+        {
+            get { return roomForCream; }
+            set
+            {
+                if (roomForCream != value)
+                {
+                    roomForCream = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("RoomForCream"));
+                }
+            }
+        }
 
+        private bool decaf = false;
         /// <summary>
         /// Gets and sets if the drink is decaf
         /// </summary>
-        public bool Decaf { get; set; } = false;
+        public bool Decaf
+        {
+            get { return decaf; }
+            set
+            {
+                if (decaf != value)
+                {
+                    decaf = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Decaf"));
+                }
+            }
+        }
 
         /// <summary>
         /// Gets the list of special instructions

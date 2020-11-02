@@ -11,6 +11,11 @@ using System.Linq;
 using System.Data.Common;
 using System.Runtime.CompilerServices;
 
+/*
+ * Author: Eric Kyle
+ * Class name: Menu.cs
+ * Purpose: To represent the menu
+ */
 namespace Data
 {
     /// <summary>

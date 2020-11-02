@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
+/*
+ * Author: Eric Kyle
+ * Class name: IOrderItem.cs
+ * Purpose: To represent a menu item
+ */
 namespace BleakwindBuffet.Data
 {
     /// <summary>

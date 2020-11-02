@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 /*
@@ -9,8 +10,13 @@ using System.Text;
  */
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class PhillyPoacher : Entree, IOrderItem
+    public class PhillyPoacher : Entree, IOrderItem, INotifyPropertyChanged
     {
+        /// <summary>
+        /// An event fired when a property of this object changes
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// Gets the price of the sandwich
         /// </summary>

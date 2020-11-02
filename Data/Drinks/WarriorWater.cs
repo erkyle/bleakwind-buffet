@@ -1,6 +1,7 @@
 ﻿using BleakwindBuffet.Data.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 /*
@@ -10,8 +11,13 @@ using System.Text;
  */
 namespace BleakwindBuffet.Data.Drinks
 {
-    public class WarriorWater : Drink, IOrderItem
+    public class WarriorWater : Drink, IOrderItem, INotifyPropertyChanged
     {
+        /// <summary>
+        /// An event fired when a property of this object changes
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// Gets the price of the drink
         /// </summary>
@@ -22,15 +28,39 @@ namespace BleakwindBuffet.Data.Drinks
         /// </summary>
         public override uint Calories => 0;
 
+        private bool ice = true;
         /// <summary>
         /// Gets and sets if the drink has ice
         /// </summary>
-        public bool Ice { get; set; } = true;
+        public bool Ice
+        {
+            get { return ice; }
+            set
+            {
+                if (ice != value)
+                {
+                    ice = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                }
+            }
+        }
 
+        private bool lemon = false;
         /// <summary>
         /// Gets and sets if the drink has lemon
         /// </summary>
-        public bool Lemon { get; set; } = false;
+        public bool Lemon
+        {
+            get { return lemon; }
+            set
+            {
+                if (lemon != value)
+                {
+                    lemon = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Lemon"));
+                }
+            }
+        }
 
         /// <summary>
         /// Gets the list of special instructions

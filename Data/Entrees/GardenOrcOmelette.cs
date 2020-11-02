@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 /*
@@ -9,8 +10,13 @@ using System.Text;
  */
 namespace BleakwindBuffet.Data.Entrees
 {
-    public class GardenOrcOmelette : Entree, IOrderItem
+    public class GardenOrcOmelette : Entree, IOrderItem, INotifyPropertyChanged
     {
+        /// <summary>
+        /// An event fired when a property of this object changes
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// Gets the price of the omelette
         /// </summary>
@@ -21,25 +27,73 @@ namespace BleakwindBuffet.Data.Entrees
         /// </summary>
         public override uint Calories => 404;
 
+        private bool broccoli = true;
         /// <summary>
         /// Gets and sets if the omelette includes broccoli
         /// </summary>
-        public bool Broccoli { get; set; } = true;
+        public bool Broccoli
+        {
+            get { return broccoli; }
+            set
+            {
+                if (broccoli != value)
+                {
+                    broccoli = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Broccoli"));
+                }
+            }
+        }
 
+        private bool mushrooms = true;
         /// <summary>
         /// Gets and sets if the omelette includes mushrooms
         /// </summary>
-        public bool Mushrooms { get; set; } = true;
+        public bool Mushrooms
+        {
+            get { return mushrooms; }
+            set
+            {
+                if (mushrooms != value)
+                {
+                    mushrooms = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mushrooms"));
+                }
+            }
+        }
 
+        private bool tomato = true;
         /// <summary>
         /// Gets and sets if the omelette includes tomato
         /// </summary>
-        public bool Tomato { get; set; } = true;
+        public bool Tomato
+        {
+            get { return tomato; }
+            set
+            {
+                if (tomato != value)
+                {
+                    tomato = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Tomato"));
+                }
+            }
+        }
 
+        private bool cheddar = true;
         /// <summary>
         /// Gets and sets if the omelette includes cheddar
         /// </summary>
-        public bool Cheddar { get; set; } = true;
+        public bool Cheddar
+        {
+            get { return cheddar; }
+            set
+            {
+                if (cheddar != value)
+                {
+                    cheddar = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cheddar"));
+                }
+            }
+        }
 
         /// <summary>
         /// Gets the list of special instructions

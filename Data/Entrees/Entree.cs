@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
+/*
+ * Author: Eric Kyle
+ * Class name: Entree.cs
+ * Purpose: To represent an entree menu item
+ */
 namespace BleakwindBuffet.Data.Entrees
 {
     /// <summary>
