@@ -99,5 +99,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             aj.Size = size;
             Assert.Equal(name, aj.ToString());
         }
+
+        [Theory]
+        [InlineData("Fresh squeezed apple juice.")]
+        public void ShouldReturnCorrectDescription(string description)
+        {
+            AretinoAppleJuice aj = new AretinoAppleJuice();
+            Assert.Equal(description, aj.Description);
+        }
     }
 }

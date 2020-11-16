@@ -27,6 +27,11 @@ namespace BleakwindBuffet.Data.Entrees
         /// </summary>
         public override uint Calories => 732;
 
+        /// <summary>
+        /// Gets the description of the burger
+        /// </summary>
+        public string Description => "Single patty burger on a brioche bun. Comes with ketchup, mustard, pickle, and cheese.";
+
         private bool bun = true;
         /// <summary>
         /// Gets and sets if the burger has a bun

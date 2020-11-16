@@ -45,6 +45,11 @@ namespace BleakwindBuffet.Data.Sides
         }
 
         /// <summary>
+        /// Gets the description of the side
+        /// </summary>
+        public string Description => "Cheesey Grits.";
+
+        /// <summary>
         /// Gets the list of special instructions
         /// </summary>
         public override List<string> SpecialInstructions

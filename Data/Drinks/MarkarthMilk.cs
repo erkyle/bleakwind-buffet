@@ -50,6 +50,11 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
+        /// <summary>
+        /// Gets the description of the drink
+        /// </summary>
+        public string Description => "Hormone-free organic 2% milk.";
+
         private bool ice = false;
         /// <summary>
         /// Gets and sets if the drink has ice

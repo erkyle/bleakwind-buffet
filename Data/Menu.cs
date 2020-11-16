@@ -413,7 +413,7 @@ namespace Data
         {
             if (category == null || category.Count() == 0) return menu;
 
-            List<IOrderItem> results = new List<IOrderItem>();
+            /*List<IOrderItem> results = new List<IOrderItem>();
             foreach (IOrderItem item in menu)
             {
                 if (item.GetType() != null && category.Contains(item.GetType().ToString()))
@@ -421,6 +421,9 @@ namespace Data
                     results.Add(item);
                 }
             }
+            return results;*/
+
+            var results = from item in menu where category.Contains(item.GetType().ToString()) select item;
             return results;
         }
 
@@ -435,34 +438,43 @@ namespace Data
         {
             if (min == null && max == null) return menu;
 
-            var results = new List<IOrderItem>();
+            //var results = new List<IOrderItem>();
 
             if (min == null)
             {
-                foreach (IOrderItem item in menu)
+                /*foreach (IOrderItem item in menu)
                 {
                     if (item.Calories <= max) results.Add(item);
                 }
+                return results;*/
+
+                var results = from item in menu where item.Calories <= max select item;
                 return results;
             }
 
             if (max == null)
             {
-                foreach (IOrderItem item in menu)
-                {
-                    if (item.Calories >= min) results.Add(item);
-                }
+                /* foreach (IOrderItem item in menu)
+                 {
+                     if (item.Calories >= min) results.Add(item);
+                 }
+                return results*/
+
+                var results = from item in menu where item.Calories >= min select item;
                 return results;
             }
 
-            foreach (IOrderItem item in menu)
+            /*foreach (IOrderItem item in menu)
             {
                 if (item.Calories >= min && item.Calories <= max)
                 {
                     results.Add(item);
                 }
-            }
-            return results;
+            }*/
+
+            var newResults = from item in menu where item.Calories >= min && item.Calories <= max select item;
+            return newResults;
+
         }
 
         /// <summary>
@@ -476,34 +488,42 @@ namespace Data
         {
             if (min == null && max == null) return menu;
 
-            var results = new List<IOrderItem>();
+            //var results = new List<IOrderItem>();
 
             if (min == null)
             {
-                foreach (IOrderItem item in menu)
+                /*foreach (IOrderItem item in menu)
                 {
                     if (item.Price <= max) results.Add(item);
                 }
+                return results;*/
+
+                var results = from item in menu where item.Price <= max select item;
                 return results;
             }
 
             if (max == null)
             {
-                foreach (IOrderItem item in menu)
+                /*foreach (IOrderItem item in menu)
                 {
                     if (item.Price >= min) results.Add(item);
                 }
+                return results;*/
+
+                var results = from item in menu where item.Price >= min select item;
                 return results;
             }
 
-            foreach (IOrderItem item in menu)
+            /*foreach (IOrderItem item in menu)
             {
-                if (item.Price >= min && item.Calories <= max)
+                if (item.Price >= min && item.Price <= max)
                 {
                     results.Add(item);
                 }
-            }
-            return results;
+            }*/
+
+            var newResults = from item in menu where item.Price >= min && item.Price <= max select item;
+            return newResults;
         }
     }
 }

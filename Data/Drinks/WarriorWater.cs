@@ -28,6 +28,11 @@ namespace BleakwindBuffet.Data.Drinks
         /// </summary>
         public override uint Calories => 0;
 
+        /// <summary>
+        /// Gets the description of the drink
+        /// </summary>
+        public string Description => "It's water. Just water.";
+
         private bool ice = true;
         /// <summary>
         /// Gets and sets if the drink has ice

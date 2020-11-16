@@ -22,6 +22,11 @@ namespace BleakwindBuffet.Data.Entrees
         public override uint Calories => 602;
 
         /// <summary>
+        /// Gets the description of the combo
+        /// </summary>
+        public string Description => "Put some meat on those bones with a small stack of pancakes. Includes sausage links, eggs, and hash browns on the side. Topped with the syrup of your choice.";
+
+        /// <summary>
         /// Gets and sets if the combo includes sausage
         /// </summary>
         public bool SausageLink { get; set; } = true;
